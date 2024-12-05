@@ -6,7 +6,7 @@
     <title>Exercices 1 2 3 4</title>
 </head>
 <body>
-    <form action="./process/user.php" method="get">
+    <form action="./process/user.php" method="post">
         <label for="lastName">Nom :</label>
         <input type="text" name="lastName" id="lastName">
 
