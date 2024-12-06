@@ -29,5 +29,6 @@ if (
     return;
 }
 
+// Redirect to other page
 var_dump($_GET);
 
