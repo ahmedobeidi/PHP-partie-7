@@ -2,12 +2,12 @@
 
 if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     header('location: ../index.php?error=postMethod');
-    die();
+    return;
 }
 
 if (!isset($_GET['firstName'], $_GET['lastName'])) {
     header('location: ../index.php?error=paramError');
-    die();
+    return;
 }
 
 if (
@@ -15,7 +15,7 @@ if (
     empty($_GET['lastName'])
 ) {
     header('location: ../index.php?error=empty');
-    die();
+    return;
 }
 
 $firstName = htmlspecialchars(trim($_GET['firstName']));
@@ -26,7 +26,7 @@ if (
     strlen($lastName) > 50
 ) {
     header('location: ../index.php?error=2');
-    die();
+    return;
 }
 
 var_dump($_GET);
