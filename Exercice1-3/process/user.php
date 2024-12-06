@@ -1,12 +1,12 @@
 <?php 
 
 if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
-    header('location: ../index.php?error=postMethod');
+    header('location: ../index.php?error=1');
     return;
 }
 
 if (!isset($_GET['firstName'], $_GET['lastName'])) {
-    header('location: ../index.php?error=paramError');
+    header('location: ../index.php?error=2');
     return;
 }
 
@@ -14,7 +14,7 @@ if (
     empty($_GET['firstName']) ||
     empty($_GET['lastName'])
 ) {
-    header('location: ../index.php?error=empty');
+    header('location: ../index.php?error=3');
     return;
 }
 
@@ -25,7 +25,7 @@ if (
     strlen($firstName) > 50 ||
     strlen($lastName) > 50
 ) {
-    header('location: ../index.php?error=2');
+    header('location: ../index.php?error=4');
     return;
 }
 
