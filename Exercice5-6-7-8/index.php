@@ -7,16 +7,17 @@
 </head>
 <body>
 
-    <?php 
-    
-    if (isset($_POST['gender'], $_POST['firstName'], $_POST['lastName'], $_POST['myFile']) && (!empty($_POST['gender']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['myFile'])) ) {
+    <?php
+
+    if (isset($_POST['gender'], $_POST['firstName'], $_POST['lastName'], $_POST['myFile']) && !empty($_POST['gender']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['myFile']) && (substr($_POST['myFile'], -4) === ".pdf")) {
         var_dump($_POST);
     }else {
         ?>
         <form action="./index.php" method="post">
         <select name="gender" id="gender">
-            <option value="Mr">Mr</option>
-            <option value="Mme">Mme</option>
+        <option value="">Enter your gender</option>
+        <option value="Mr">Mr</option>
+        <option value="Mme">Mme</option>
         </select>
 
         <label for="firstName">Prénom :</label>
@@ -27,7 +28,7 @@
 
         <input type="file" name="myFile"/>
 
-        <input type="submit" value="submit">
+        <input type="submit" value="submit" accept=".pdf">
     </form>
     <?php
     }
